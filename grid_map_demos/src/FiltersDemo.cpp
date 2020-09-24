@@ -22,6 +22,7 @@ FiltersDemo::FiltersDemo(ros::NodeHandle& nodeHandle, bool& success)
     return;
   }
 
+  //eric_wang: Read param in filters_demo.launch (elevation_mapping)
   subscriber_ = nodeHandle_.subscribe(inputTopic_, 1, &FiltersDemo::callback, this);
   publisher_ = nodeHandle_.advertise<grid_map_msgs::GridMap>(outputTopic_, 1, true);
 
@@ -63,7 +64,8 @@ void FiltersDemo::callback(const grid_map_msgs::GridMap& message)
     return;
   }
 
-  ROS_INFO("PUBLISH");
+  //ROS_INFO("PUBLISH");
+  //ROS_WARN("Publish Test");
   // Publish filtered output grid map.
   grid_map_msgs::GridMap outputMessage;
   GridMapRosConverter::toMessage(outputMap, outputMessage);

@@ -28,6 +28,7 @@ int main(int argc, char** argv) {
   gridMapPclLoader.loadParameters(gm::getParameterPath());
   gridMapPclLoader.loadCloudFromPcdFile(pathToCloud);
 
+  // Strive4G8ness: Convert pointcloud into grid map.
   gm::processPointcloud(&gridMapPclLoader, nh);
 
   grid_map::GridMap gridMap = gridMapPclLoader.getGridMap();

@@ -114,7 +114,7 @@ bool GridMapVisualization::readParameters()
     std::string name = config[i]["name"];
     auto visualization = factory_.getInstance(type, name);
     visualization->readParameters(config[i]);
-    visualizations_.push_back(visualization);
+    visualizations_.push_back(visualization); //!Eric_Wang: different kinds of visualizations, eg. occupancyGrid, pointCloud.
     ROS_INFO("%s: Configured visualization of type '%s' with name '%s'.",
              visualizationsParameter_.c_str(), type.c_str(), name.c_str());
   }
