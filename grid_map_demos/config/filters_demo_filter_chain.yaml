@@ -97,6 +97,7 @@ grid_map_filters:
   #     window_size: 3 # Make sure to make this compatible with the kernel matrix.
 
   # Compute traversability as normalized weighted sum of slope and roughness.
+  # Strive4G8ness_ based on elevation_inpainted layer. 
   - name: traversability
     type: gridMapFilters/MathExpressionFilter
     params:
